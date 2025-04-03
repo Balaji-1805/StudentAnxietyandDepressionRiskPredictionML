@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+   <style>
+       /* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for results */
+.results-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Heading */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+/* Results text */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f4f4f4;
+}
+
+/* Risk Level Highlights */
+p strong {
+    font-weight: bold;
+}
+
+/* Anxiety and Depression Risk Colors */
+.high-risk {
+    color: #d9534f; /* Red for high risk */
+}
+
+.low-risk {
+    color: #5cb85c; /* Green for low risk */
+}
+
+/* Back to form button */
+a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+a:hover {
+    background-color: #45a049;
+}
+
+   </style>
+</head>
+<body>
+    <div class="results-container">
+        <h2>Prediction Results</h2>
+        <p><strong>Anxiety Risk Level:</strong> {{ anxiety_risk }}</p>
+        <p><strong>Depression Risk Level:</strong> {{ depression_risk }}</p>
+        <a href="/form">Predict Again</a>
+    </div>
+</body>
+</html>
