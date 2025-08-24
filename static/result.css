@@ -1,0 +1,86 @@
+ body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.results-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f4f4f4;
+}
+
+.high-risk {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.low-risk {
+    color: #5cb85c;
+    font-weight: bold;
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    margin: 5px;
+    transition: background 0.3s ease;
+}
+
+a:hover {
+    background-color: #45a049;
+}
+
+.suggestions {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.suggestions h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.suggestions ul {
+    list-style-type: square;
+    padding-left: 20px;
+    font-size: 1rem;
+}
+
+.suggestions ul li {
+    margin-bottom: 10px;
+}

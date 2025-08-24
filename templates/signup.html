@@ -4,127 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-<!--    <link rel="stylesheet" href="signup.css">-->
-    <style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-header {
-    background: #2c3e50;
-    color: white;
-    padding: 1.5rem 0;
-}
-
-.head-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.app-name {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-nav a {
-    font-weight:bold;
-    color: white;
-    text-decoration: none;
-    font-size: 1.3rem;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-body {
-    background:white;
-}
-
-
-.container {
-    margin:40px auto;
-    width: 100%;
-    max-width: 600px;
-    background: #002b36;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    color:white;
-}
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2rem;
-}
-
-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-form input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-}
-
-button {
-    width: 100%;
-    padding: 15px;
-    background: #0077b6;
-    color: #fff;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: #0096c7;
-}
-
-p {
-    text-align: center;
-    margin-top: 20px;
-}
-
-p a {
-    color: #00b4d8;
-    text-decoration:none;
-}
-p a:hover
-{
-text-decoration: underline;
-}
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
 </head>
 <body>
     <header>
     <div class="head-container">
         <div class="logo">
-            <a href="/" style="text-decoration:none;color:white;">Logo</a>
+            <a href="/" style="text-decoration:none;color:white;">Home</a>
         </div>
         <div class="app-name">Student Mental Health Prediction App</div>
         <nav>

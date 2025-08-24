@@ -4,114 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health Prediction</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 0 auto;
-        }
-        h2 {
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
 </head>
 <body>
     <div class="container">
-        <h2>Predict Anxiety & Depression Risk</h2>
+        <h2>Fill the Form to Predict Anxiety & Depression Risk</h2>
         <form action="/form" method="POST">
-            <label for="sleep_hours">Sleep Hours:</label>
-            <input type="number" step="0.1" id="sleep_hours" name="sleep_hours" required>
+            <div>
+                <label for="sleep_hours">Sleep Hours:</label>
+                <input type="number" step="0.1" id="sleep_hours" name="sleep_hours" required>
+            </div>
+            <div>
+                <label for="study_hours">Study Hours:</label>
+                <input type="number" step="0.1" id="study_hours" name="study_hours" required>
+            </div>
+            <div>
+                <label for="social_interactions">Social Interactions (per day):</label>
+                <input type="number" id="social_interactions" name="social_interactions" required>
+            </div>
 
-            <label for="study_hours">Study Hours:</label>
-            <input type="number" step="0.1" id="study_hours" name="study_hours" required>
+            <div>
+                <label for="exercise">Exercise:</label>
+                <select id="exercise" name="exercise">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div>
+                <label for="screen_time">Screen Time (hours/day):</label>
+                <input type="number" step="0.1" id="screen_time" name="screen_time" required>
+            </div>
+            <div>
+                <label for="diet_quality">Diet Quality:</label>
+                <select id="diet_quality" name="diet_quality">
+                    <option value="1">Healthy</option>
+                    <option value="0">Unhealthy</option>
+                </select>
+            </div>
 
-            <label for="social_interactions">Social Interactions (per day):</label>
-            <input type="number" id="social_interactions" name="social_interactions" required>
+            <div>
+                <label for="stress_level">Stress Level (0-10):</label>
+                <input type="number" id="stress_level" name="stress_level" min="0" max="10" required>
+            </div>
+            <div>
+                <label for="academic_pressure">Academic Pressure (0-10):</label>
+                <input type="number" id="academic_pressure" name="academic_pressure" min="0" max="10" required>
+            </div>
+            <div>
+                <label for="financial_stress">Financial Stress (0-10):</label>
+                <input type="number" id="financial_stress" name="financial_stress" min="0" max="10" required>
+            </div>
 
-            <label for="exercise">Exercise:</label>
-            <select id="exercise" name="exercise">
-                <option value="1">Yes</option>
-                <option value="0">No</option>
-            </select>
+            <div>
+                <label for="relationship_issues">Relationship Issues:</label>
+                <select id="relationship_issues" name="relationship_issues">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div>
+                <label for="self_esteem">Self-Esteem (0-10):</label>
+                <input type="number" id="self_esteem" name="self_esteem" min="0" max="10" required>
+            </div>
+            <div>
+                <label for="negative_thoughts">Negative Thoughts (0-10):</label>
+                <input type="number" id="negative_thoughts" name="negative_thoughts" min="0" max="10" required>
+            </div>
 
-            <label for="screen_time">Screen Time (hours per day):</label>
-            <input type="number" step="0.1" id="screen_time" name="screen_time" required>
+            <div>
+                <label for="optimism_level">Optimism Level (0-10):</label>
+                <input type="number" id="optimism_level" name="optimism_level" min="0" max="10" required>
+            </div>
+            <div>
+                <label for="social_media_usage">Social Media Usage (hrs/day):</label>
+                <input type="number" step="0.1" id="social_media_usage" name="social_media_usage" required>
+            </div>
+            <div>
+                <label for="news_consumption">News Mood Impact (0-10):</label>
+                <input type="number" id="news_consumption" name="news_consumption" min="0" max="10" required>
+            </div>
 
-            <label for="diet_quality">Diet Quality:</label>
-            <select id="diet_quality" name="diet_quality">
-                <option value="1">Healthy</option>
-                <option value="0">Unhealthy</option>
-            </select>
-
-            <label for="stress_level">Stress Level (0-10):</label>
-            <input type="number" id="stress_level" name="stress_level" min="0" max="10" required>
-
-            <label for="academic_pressure">Academic Pressure (0-10):</label>
-            <input type="number" id="academic_pressure" name="academic_pressure" min="0" max="10" required>
-
-            <label for="financial_stress">Financial Stress (0-10):</label>
-            <input type="number" id="financial_stress" name="financial_stress" min="0" max="10" required>
-
-            <label for="relationship_issues">Relationship Issues:</label>
-            <select id="relationship_issues" name="relationship_issues">
-                <option value="1">Yes</option>
-                <option value="0">No</option>
-            </select>
-
-            <label for="self_esteem">Self-Esteem Level (0-10):</label>
-            <input type="number" id="self_esteem" name="self_esteem" min="0" max="10" required>
-
-            <label for="negative_thoughts">Negative Thoughts (0-10):</label>
-            <input type="number" id="negative_thoughts" name="negative_thoughts" min="0" max="10" required>
-
-            <label for="optimism_level">Optimism Level (0-10):</label>
-            <input type="number" id="optimism_level" name="optimism_level" min="0" max="10" required>
-
-            <label for="social_media_usage">Social Media Usage (hours per day):</label>
-            <input type="number" step="0.1" id="social_media_usage" name="social_media_usage" required>
-
-            <label for="news_consumption">News Impact on Mood (0-10):</label>
-            <input type="number" id="news_consumption" name="news_consumption" min="0" max="10" required>
-
-            <label for="support_system">Support System Strength (0-10):</label>
-            <input type="number" id="support_system" name="support_system" min="0" max="10" required>
-
-            <label for="alone_time">Time Spent Alone (hours per day):</label>
-            <input type="number" step="0.1" id="alone_time" name="alone_time" required>
-
+            <div>
+                <label for="support_system">Support System (0-10):</label>
+                <input type="number" id="support_system" name="support_system" min="0" max="10" required>
+            </div>
+            <div>
+                <label for="alone_time">Alone Time (hrs/day):</label>
+                <input type="number" step="0.1" id="alone_time" name="alone_time" required>
+            </div>
+            <br>
+            <div class="button-group">
             <button type="submit">Predict</button>
+        </div>
+        <a href="/" class="logout-button">Logout</a>
         </form>
     </div>
 </body>

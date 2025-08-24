@@ -4,103 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Mental Health Prediction App</title>
-<!--    <link rel="stylesheet" href="index-style.css">-->
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body
-{
-    background-image:url('/Depression-image.jpg') no-repeat;
-    background-size:cover;
-    background-position:top;
-}
-
-
-/* Header Styles */
-header {
-    background: #2c3e50;
-    color: white;
-    padding: 1.5rem 0;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.app-name {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-nav a {
-    font-weight:bold;
-    color: white;
-    text-decoration: none;
-    font-size: 1.3rem;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Hero Section */
-.hero {
-    color:black;
-
-    height:100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 2rem;
-    font-weight:bolder;
-}
-
-.hero-content {
-    max-width: 800px;
-    padding: 2rem;
-    border-radius: 8px;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    color:white;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-
-}
-
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <a href="/" style="text-decoration:none;color:white;">Logo</a>
+                <a href="/" style="text-decoration:none;color:white;">Home</a>
             </div>
             <div class="app-name">Student Mental Health Prediction App</div>
             <nav>
